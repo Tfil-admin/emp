@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hp.mapper.DeptMapper">
+    <select id="findDept" resultType="com.hp.pojo.Dept">
+        select * from dept
+    </select>
+    <insert id="addDept" >
+        insert into dept(deptName,location) values (#{deptName},#{location})
+    </insert>
+    <update id="editDept">
+        update dept set deptName=#{deptName},location=#{location} where deptId=#{deptId}
+    </update>
+    <delete id="delDept">
+        delete from dept where deptId=#{deptId}
+    </delete>
+</mapper>

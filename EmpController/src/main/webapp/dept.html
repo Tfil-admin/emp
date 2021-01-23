@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="layui/css/layui.css" media="all">
+    <script src="layui/layui.js"></script>
+    <script src="js/dept.js"></script>
+</head>
+<body>
+<table class="layui-hide" id="deptTable" lay-filter="test"></table>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+<div id="bookFrom" style="display:none;">
+    <form class="layui-form" action="">
+        <div class="layui-form-item" style="display: none;">
+            <label class="layui-form-label">编号：</label>
+            <div class="layui-input-inline">
+                <input type="text" name="deptId" placeholder="请输入编号" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">部门：</label>
+            <div class="layui-input-inline">
+                <input type="text" name="deptName" placeholder="请输入部门" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">地址：</label>
+            <div class="layui-input-inline">
+                <input type="text" name="location" placeholder="请输入地址" class="layui-input">
+            </div>
+        </div>
+
+<!--        <div class="layui-form-item">-->
+<!--          &lt;!&ndash;  <label class="layui-form-label">部门：</label>-->
+<!--            <div class="layui-input-inline">-->
+<!--                <input type="text" name="deptId" placeholder="请输入部门" class="layui-input">-->
+<!--            </div>&ndash;&gt;-->
+<!--            <label class="layui-form-label">部门:</label>-->
+<!--            <div class="layui-input-inline">-->
+<!--                <select id="selectID" name="deptId">-->
+<!--                </select>-->
+<!--            </div>-->
+<!--        </div>-->
+        <div class="layui-form-item" style="display: none;">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo" id="submitBtn">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary" id="resetBtn">重置</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

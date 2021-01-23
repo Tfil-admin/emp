@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hp.mapper.EmpMapper">
+    <resultMap id="emp" type="com.hp.pojo.Emp">
+        <id property="empId" column="empId"></id>
+        <result property="empName" column="empName"/>
+        <association property="dept" column="deptId" javaType="com.hp.pojo.Dept">
+            <id property="deptId" column="deptId"/>
+            <result property="deptName" column="deptName"/>
+            <result property="location" column="location"/>
+        </association>
+    </resultMap>
+    <select id="findEmp" resultMap="emp">
+    select e.*, d.deptName,d.location from emp e,dept d where d.deptId =e.deptId
+    </select>
+    <insert id="addEmp">
+     INSERT INTO emp(empName,deptId) VALUES (#{empName},#{dept.deptId})
+    </insert>
+    <update id="editEmp">
+        update emp set  empName=#{empName},deptId=#{dept.deptId} where empId=#{empId}
+    </update>
+    <delete id="delEmp">
+        delete from emp where empId=#{empId}
+    </delete>
+</mapper>
